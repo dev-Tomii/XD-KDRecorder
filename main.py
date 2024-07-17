@@ -1,7 +1,7 @@
 import json
 from tkinter import messagebox as mb
 
-gamemodes = ["Escolta", "Control de Zonas", "Dominacion", "Ocupacion", "Estrella", "CLB", "TDM"]
+gamemodes = ["Escort", "Zone Control", "Domination", "Occupy", "Hot Shot", "CTF", "TDM"]
 
 with open("./db.json", "r") as file:
     db = json.load(file)
@@ -16,14 +16,14 @@ def resetDB():
 
 def get_gamemode_info(gamemode):
     for item in db:
-        if item["name"].lower() == gamemode.lower():
+        if item["name"].upper() == gamemode.upper():
             return item
     return None
 
 def add_record(gamemode, kd):
     selected = get_gamemode_info(gamemode)
     if selected is None:
-        mb.showerror(title = "Error", message = "No se ha seleccionado un modo de juego")
+        mb.showerror(title = "Error", message = "Plase, choose a gamemode from the list")
         return
     games = selected["record"]
 
@@ -42,6 +42,3 @@ def new_kd(gamemode_name, kills, deaths):
     with open("./db.json", "w") as file:
         json.dump(db, file)
 
-# Luego puedes llamar a las funciones como en el siguiente ejemplo:
-# new_kd("Deathmatch", 100, 50, db)
-new_kd('control de zonas', 100, 50)
