@@ -7,6 +7,8 @@
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/dev-Tomii/XD-KDRecorder?style=for-the-badge">
 <img alt="Static Badge" src="https://img.shields.io/badge/made_with-python-green?style=for-the-badge&logo=python&logoColor=green">
 </p>
-
+<p align="center">
+The XD KDRecorder simulates the KDR of XDefiant calculating the last 10 games of each mode. When you add a new record use the Refresh button to actualize the list
+</p>
 
 
